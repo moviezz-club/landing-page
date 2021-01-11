@@ -67,10 +67,52 @@
           La version beta arrive bientôt. <br>
           Rejoins la communauté Moviezz dès maintenant pour participer au lancement :)
   			</p>
-  			<form action="">
-  				<input type="text">
-  			</form>
+
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="https://club.us7.list-manage.com/subscribe/post?u=bdad114a17096e9ac5dec9ec2&amp;id=b238d28df7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <div class="flex flex-align-center">
+                <input type="email" value="" name="EMAIL" placeholder="robert.deniro@moviezz.club" class="required email" id="mce-EMAIL">
+                <input type="submit" value="Je rejoins la communauté" name="subscribe" id="mc-embedded-subscribe" class="btn btn-cta">
+              </div>
+            </div>
+            <div id="mce-responses" class="clear mt2">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_bdad114a17096e9ac5dec9ec2_b238d28df7" tabindex="-1" value="">
+            </div>
+          </form>
+        </div>
+        <!--End mc_embed_signup-->
   		</div>
   	</div>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+    </script>
+    <script type='text/javascript'>
+      (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='radio';}(jQuery));var $mcj = jQuery.noConflict(true);
+    </script>
+    <script>
+      // https://stackoverflow.com/a/55459467/4789597
+      var target = document.getElementById('mce-success-response');
+
+      // create an observer instance
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(mutation => {
+          if (target.innerHTML === "Thank you for subscribing!") {
+            target.innerHTML = "Bienvenue dans la commmunauté !";
+          }
+        });
+      });
+
+      // configuration of the observer:
+      var config = { attributes: true, childList: true, characterData: true };
+
+      // pass in the target node, as well as the observer options
+      observer.observe(target, config);
+    </script>
   </body>
 </html>
