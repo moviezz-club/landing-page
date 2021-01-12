@@ -1,9 +1,9 @@
-@font-face {
+/*@font-face {
  font-family: "Circular-Bold";
  src: url("../fonts/CircularStd-Bold.woff") format("woff");
  font-weight: normal;
 
-}
+}*/
 
 @font-face {
  font-family: "Circular-Book";
@@ -18,7 +18,7 @@ h1 {
 	letter-spacing: -0.02em;
 	line-height: 84px;
 	margin-top:110px;
-	font-family: "Circular-Book";
+	font-family: 'Circular-Book', sans-serif;
 	font-weight: normal;
 }
 
@@ -79,7 +79,7 @@ input, button, submit {
 	padding:16px 24px;
 	background: #AC1839;
 	color:white;
-	font-family: "Circular Std";
+	font-family: 'Circular-Book', sans-serif;
 	font-weight: bold;
 	font-size: 16px;
 }
@@ -92,7 +92,7 @@ input, button, submit {
 	padding:16px 24px;
 	border-radius: 4px 0px 0px 4px;
 	background: rgba(255, 255, 255, 0.1);
-	font-family: "Circular Std";
+	font-family: 'Circular-Book', sans-serif;
 	font-size: 16px;
 	color: #fff;
 	opacity: 0.7;
