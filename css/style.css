@@ -58,7 +58,7 @@ body {
 	width:70%;
 }
 
-/* FORM Design */ 
+/* FORM Design */
 
 input, button, submit {
   border:none;
@@ -73,6 +73,9 @@ input, button, submit {
 	align-items: center;
 }
 
+.mc-form {
+  min-width: 50em;
+}
 
 .btn-submit {
 	border-radius: 0px 4px 4px 0px;
@@ -87,10 +90,10 @@ input, button, submit {
 .btn-submit:hover {
 	cursor:pointer;
 }
-#mce-EMAIL {
-	width: 280px;
+
+#mce-EMAIL, #mce-FNAME {
 	padding:16px 24px;
-	border-radius: 4px 0px 0px 4px;
+  border-radius: 4px 0px 0px 4px;
 	background: rgba(255, 255, 255, 0.1);
 	font-family: 'Circular-Book', sans-serif;
 	font-size: 16px;
@@ -98,7 +101,14 @@ input, button, submit {
 	opacity: 0.7;
 }
 
+#mce-FNAME {
+  width: 40ch;
+  border-right: 1px solid #AC1839;
+}
 
+#mce-EMAIL {
+  width: 70ch;
+}
 
 /* MEDIA QUERIES */
 
@@ -158,12 +168,30 @@ input, button, submit {
 
 	#mc-embedded-subscribe {
 		width: 100%;
-    	margin-top: 8px;
+    margin-top: 8px;
 	}
-	#mce-EMAIL {
+	#mce-EMAIL, #mce-FNAME {
 		padding: 12px;
-		width:100%;
+		width: 90%;
+    border-radius: 4px;
 	}
+
+  #mce-FNAME {
+    border-right: none;
+  }
+
+  .mc-form {
+    min-width: initial;
+  }
+
+  .btn-submit {
+    border-radius: 4px;
+  }
+
+  input:nth-child(2) {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+  }
 
 	#mc_embed_signup_scroll {
 		width: 75vw;
@@ -173,7 +201,7 @@ input, button, submit {
 }
 
 
-/* Utility classes */ 
+/* Utility classes */
 
 .mt2 {
   margin-top: 2em;
