@@ -81,7 +81,7 @@ input, button, submit {
 }
 
 .btn-submit {
-  border-radius: 0px 4px 4px 0px;
+  border-radius: 4px 4px 4px 4px;
   padding:16px 24px;
   background: #AC1839;
   color:white;
@@ -96,7 +96,7 @@ input, button, submit {
 
 #mce-EMAIL, #mce-FNAME {
   padding:16px 24px;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 4px 4px 4px 4px;
   background: rgba(255, 255, 255, 0.1);
   font-family: 'Circular-Book', sans-serif;
   font-size: 16px;
