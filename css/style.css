@@ -46,6 +46,8 @@ body {
 	font-family: 'Circular-Book', sans-serif;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 
 
