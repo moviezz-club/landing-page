@@ -45,6 +45,9 @@ body {
 	color:white;
 	font-family: 'Circular-Book', sans-serif;
 	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 
 
@@ -200,6 +203,11 @@ input, button, submit {
 
 }
 
+@media screen and (min-width: 1441px) { 
+	.wrapper {
+		margin-top:170px; 
+	}
+}
 
 /* Utility classes */
 
