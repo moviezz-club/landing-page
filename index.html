@@ -2,13 +2,13 @@
 <html class="no-js" lang="">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVXKLGDMTF"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37123068-4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-VVXKLGDMTF');
+      gtag('config', 'UA-37123068-4');
     </script>
 
     <title>Moviezz - Le blindtest des cinéphiles</title>
@@ -107,6 +107,8 @@
         mutations.forEach(mutation => {
           if (target.innerHTML === "Thank you for subscribing!") {
             target.innerHTML = "Vérifie tes emails, tu devrais recevoir un message de bienvenue sous peu 💌";
+
+            gtag('event', 'signup', { event_category: 'form-submit', event_label: 'Prelaunch - Signup' })
           }
         });
       });
