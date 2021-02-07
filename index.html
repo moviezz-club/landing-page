@@ -107,6 +107,8 @@
         mutations.forEach(mutation => {
           if (target.innerHTML === "Thank you for subscribing!") {
             target.innerHTML = "Vérifie tes emails, tu devrais recevoir un message de bienvenue sous peu 💌";
+
+            gtag('event', 'signup', { event_category: 'form-submit', event_label: 'Prelaunch - Signup' })
           }
         });
       });
