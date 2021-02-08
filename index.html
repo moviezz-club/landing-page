@@ -136,7 +136,7 @@
       prepMcForm()
 
       redirectToFeedbackPage = () => {
-        window.location = `${window.location.href}feedback.html?first_name=${encodeURIComponent(readFirstName())}&email=${encodeURIComponent(readEmail())}`
+        window.location = `${window.location.origin}/feedback.html?first_name=${encodeURIComponent(readFirstName())}&email=${encodeURIComponent(readEmail())}`
       }
 
       // https://stackoverflow.com/a/55459467/4789597
