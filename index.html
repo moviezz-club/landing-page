@@ -70,7 +70,7 @@
 
         <!-- Begin Mailchimp Signup Form -->
         <div id="mc_embed_signup">
-          <form action="https://club.us7.list-manage.com/subscribe/post?u=bdad114a17096e9ac5dec9ec2&amp;id=b238d28df7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <form action="https://club.us7.list-manage.com/subscribe/post?u=bdad114a17096e9ac5dec9ec2&id=b238d28df7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
               <div class="form-inline mc-form">
                 <input type="text" autocomplete="given-name" value="" name="FNAME" id="mce-FNAME" placeholder="Robert">
@@ -93,12 +93,52 @@
         <!--End mc_embed_signup-->
       </div>
     </div>
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
-    </script>
-    <script type='text/javascript'>
-      (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='radio';}(jQuery));var $mcj = jQuery.noConflict(true);
-    </script>
     <script>
+      const env = () => {
+        const environment = window.location.origin == "https://www.moviezz.club" ? "production" : "development"
+        return {
+          env:           environment,
+          isProduction:  environment == "production",
+          isDevelopment: environment == "development",
+        }
+      }
+
+      const readFirstName = () => {
+        return document.body.dataset.mailchimpSubmittedFirstName
+      }
+      const readEmail = () => {
+        return document.body.dataset.mailchimpSubmittedEmail
+      }
+
+      const captureFirstName = () => {
+        const input = document.querySelector('input[name="FNAME"]')
+        document.body.dataset.mailchimpSubmittedFirstName = input.value
+      }
+
+      const captureEmail = () => {
+        const input = document.querySelector('input[name="EMAIL"]')
+        document.body.dataset.mailchimpSubmittedEmail = input.value
+      }
+
+      const prepMcForm = () => {
+        const mcForm = document.querySelector('form#mc-embedded-subscribe-form')
+        const listId = env().isProduction ? "b238d28df7" : "841d97e967"
+
+        mcForm.action = `https://club.us7.list-manage.com/subscribe/post?u=bdad114a17096e9ac5dec9ec2&id=${listId}`
+
+        mcForm.addEventListener('submit', (e) => {
+          e.preventDefault()
+          captureFirstName()
+          captureEmail()
+        })
+      }
+
+      prepMcForm()
+
+      redirectToFeedbackPage = () => {
+        window.location = `${window.location.href}feedback.html?first_name=${readFirstName()}&email=${readEmail()}`
+      }
+
       // https://stackoverflow.com/a/55459467/4789597
       var target = document.getElementById('mce-success-response');
 
@@ -106,9 +146,10 @@
       var observer = new MutationObserver(function(mutations) {
         mutations.forEach(mutation => {
           if (target.innerHTML === "Thank you for subscribing!") {
-            target.innerHTML = "Vérifie tes emails, tu devrais recevoir un message de bienvenue sous peu 💌";
+            target.innerHTML = "Bienvenue dans la communauté Moviezz 🤗";
 
             gtag('event', 'signup', { event_category: 'form-submit', event_label: 'Prelaunch - Signup' })
+            setTimeout(redirectToFeedbackPage, 700)
           }
         });
       });
@@ -118,6 +159,11 @@
 
       // pass in the target node, as well as the observer options
       observer.observe(target, config);
+    </script>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+    </script>
+    <script type='text/javascript'>
+      (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='radio';}(jQuery));var $mcj = jQuery.noConflict(true);
     </script>
   </body>
 </html>
