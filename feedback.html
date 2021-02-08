@@ -57,11 +57,23 @@
     </style>
   </head>
   <body>
-    <iframe id="typeform-full" width="100%" height="100%" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" src="https://form.typeform.com/to/twD4cTZD?typeform-medium=embed-snippet#first_name=Nicolas"></iframe>
-
     <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
 
     <script>
+      const initTypeform = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('first_name') || ""
+        const email     = urlParams.get('email') || ""
+
+        const typeformUrl = `https://form.typeform.com/to/twD4cTZD?typeform-medium=embed-snippet#first_name=${firstName}&email=${email}`
+
+        const iframeHTML = `<iframe id="typeform-full" width="100%" height="100%" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" src="${typeformUrl}"></iframe>`
+
+        document.body.insertAdjacentHTML('afterbegin', iframeHTML)
+      }
+
+      initTypeform()
+
       window.addEventListener('form-submit', (e) => {
         gtag('event', 'qualification', { 'event_category': 'form-submit', 'event_label': 'Prelaunch - Qualification' })
       })
