@@ -204,13 +204,17 @@ input, button, submit {
 
 }
 
-@media screen and (min-width: 1441px) { 
+@media screen and (min-width: 1441px) {
   .wrapper {
-    margin-top:170px; 
+    margin-top:170px;
   }
 }
 
 /* Utility classes */
+
+.mt1 {
+  margin-top: 1em;
+}
 
 .mt2 {
   margin-top: 2em;

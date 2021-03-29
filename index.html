@@ -80,7 +80,7 @@
                 <input type="radio" value="Yes" name="MMERGE6" id="mce-MMERGE6-0" checked style="display:none">
               </div>
             </div>
-            <div id="mce-responses" class="clear mt2">
+            <div id="mce-responses" class="clear mt1">
               <div class="response" id="mce-error-response" style="display:none"></div>
               <div class="response" id="mce-success-response" style="display:none"></div>
             </div>
@@ -139,7 +139,7 @@
         window.location = `${window.location.origin}/feedback.html?first_name=${encodeURIComponent(readFirstName())}&email=${encodeURIComponent(readEmail())}`
       }
 
-      redirectToHomePage = () => { window.location.replace("https://app.moviezz.club/") }
+      redirectToHomePage = () => { window.location = "https://app.moviezz.club/" }
 
       // https://stackoverflow.com/a/55459467/4789597
       var target = document.getElementById('mce-success-response');
@@ -151,7 +151,7 @@
             target.innerHTML = "Bienvenue dans la communauté Moviezz 🤗";
 
             gtag('event', 'signup', { event_category: 'form-submit', event_label: 'Signup' })
-            setTimeout(redirectToHomePage, 700)
+            setTimeout(redirectToHomePage, 1000)
           }
         });
       });
