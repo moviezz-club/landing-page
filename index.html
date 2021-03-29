@@ -64,8 +64,8 @@
 
       <div class="form">
         <p>
-          La version beta arrive bientôt. <br>
-          Rejoins la communauté Moviezz dès maintenant pour participer au lancement&nbsp;!
+          La version beta est en ligne 🎉 <br>
+          Rejoins la communauté Moviezz dès maintenant pour jouer&nbsp;!
         </p>
 
         <!-- Begin Mailchimp Signup Form -->
@@ -75,7 +75,7 @@
               <div class="form-inline mc-form">
                 <input type="text" autocomplete="given-name" value="" name="FNAME" id="mce-FNAME" placeholder="Robert">
                 <input type="email" value="" name="EMAIL" placeholder="robert.deniro@moviezz.club" class="required email" id="mce-EMAIL">
-                <input type="submit" value="Je rejoins la communauté" name="subscribe" id="mc-embedded-subscribe" class="btn btn-cta btn-submit">
+                <input type="submit" value="Je veux jouer&nbsp;!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-cta btn-submit">
                 <!-- To add subscriber to MC segment "Launch Subscriber" -->
                 <input type="radio" value="Yes" name="MMERGE6" id="mce-MMERGE6-0" checked style="display:none">
               </div>
@@ -139,6 +139,8 @@
         window.location = `${window.location.origin}/feedback.html?first_name=${encodeURIComponent(readFirstName())}&email=${encodeURIComponent(readEmail())}`
       }
 
+      redirectToHomePage = () => { window.location.replace("https://app.moviezz.club/") }
+
       // https://stackoverflow.com/a/55459467/4789597
       var target = document.getElementById('mce-success-response');
 
@@ -149,7 +151,7 @@
             target.innerHTML = "Bienvenue dans la communauté Moviezz 🤗";
 
             gtag('event', 'signup', { event_category: 'form-submit', event_label: 'Prelaunch - Signup' })
-            setTimeout(redirectToFeedbackPage, 700)
+            setTimeout(redirectToHomePage, 700)
           }
         });
       });
