@@ -143,24 +143,32 @@
 
       // https://stackoverflow.com/a/55459467/4789597
       var target = document.getElementById('mce-success-response');
+      var alreadySigned = document.getElementById('mce-error-response');
 
+      console.log(alreadySigned);
       // create an observer instance
       var observer = new MutationObserver(function(mutations) {
         mutations.forEach(mutation => {
+
           if (target.innerHTML === "Thank you for subscribing!") {
             target.innerHTML = "Bienvenue dans la communauté Moviezz 🤗";
-
             gtag('event', 'signup', { event_category: 'form-submit', event_label: 'Signup' })
             setTimeout(redirectToHomePage, 1000)
+          }
+
+          if (alreadySigned.style.display = 'block') {
+            gtag('event', 'already-signup', { event_category: 'form-submit', event_label: 'AlreadySignup' });
+            setTimeout(redirectToHomePage, 0)
           }
         });
       });
 
       // configuration of the observer:
-      var config = { attributes: true, childList: true, characterData: true };
+      var config = { attributes: true, childList: true, characterData: true, attributeFilter : ['style'] };
 
       // pass in the target node, as well as the observer options
       observer.observe(target, config);
+      observer.observe(alreadySigned, config);
     </script>
     <script type='text/javascript' src='https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
     </script>
