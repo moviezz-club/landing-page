@@ -8,7 +8,6 @@
 @font-face {
  font-family: "Circular-Book";
  src: url("../fonts/CircularStd-Book.woff") format("woff");
-
 }
 
 /* FONTS */
@@ -17,7 +16,7 @@ h1 {
   font-size: 64px;
   letter-spacing: -0.02em;
   line-height: 74px;
-  margin-top:60px;
+  margin-top:40px;
   font-family: 'Circular-Book', sans-serif;
   font-weight: normal;
 }
