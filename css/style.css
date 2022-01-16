@@ -13,17 +13,17 @@
 /* FONTS */
 
 h1 {
-  font-size: 64px;
+  font-size: 60px;
   letter-spacing: -0.02em;
-  line-height: 74px;
+  line-height: 70px;
   margin-top:40px;
   font-family: 'Circular-Book', sans-serif;
   font-weight: normal;
 }
 
 .content {
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 20px;
+  line-height: 32px;
   font-weight: normal;
   margin-top:-20px;
   margin-bottom:90px;
@@ -36,6 +36,9 @@ h1 {
   font-weight: normal;
 }
 
+.logo {
+  width: 60px;
+}
 
 body {
   background-image: url('../img/bg.png');
